@@ -19,4 +19,5 @@ function Home({ workbookList }) {
 
 export default Home
 
-// TODO: 첨부된 화면과 가장 유사하게 구현
+// TODO
+// 첨부된 화면과 가장 유사하게 반응형으로 구현하시면 됩니다.

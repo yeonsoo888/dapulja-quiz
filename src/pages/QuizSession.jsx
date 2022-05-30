@@ -28,7 +28,7 @@ function OmrRow(quiz) {
 function QuizSession({ title, quizzes }) {
   return (
     <div>
-      {/* 아래의 버튼을 누르면 모달이 뜨는 페이지가 뜬다. */}
+      {/* 아래의 버튼을 누르면 모달이 보이는 페이지로 이동합니다.. */}
       <Link to='/quiz/modal'>퀴즈 나가기</Link>
       <h1>{title}</h1>
       <div style={{ display: "flex" }}>
@@ -50,7 +50,8 @@ function QuizSession({ title, quizzes }) {
 export default QuizSession
 
 // TODO
-// DOM 구조는 자유롭게 바꾸셔도됩니다.
+// DOM 구조는 자유롭게 변경하셔도 됩니다.
+// 모바일 화면에서 보이는 정답 입력란은 [입력완료] 버튼을 눌러야 닫히도록 구현해야 합니다.
 // 화면 구현에 필요한 아이콘들은 public/assets 폴더에 있습니다.
-// X 아이콘은 'Close.svg'
+// 닫기 아이콘은 'Close.svg'
 // 뒤로가기 아이콘은 'Back.svg'

@@ -25,7 +25,6 @@ function MultipleAnswer() {
   )
 }
 
-// map 을 돌리면 오히려 어려우려나?
 function OmrRow(quiz) {
   return (
     <div key={quiz.seq}>
@@ -48,6 +47,8 @@ function Result({ resultSummary, resultSheet }) {
 
 export default Result
 
+// TODO
+// DOM 구조는 자유롭게 변경하셔도 됩니다.
 // 화면 구현에 필요한 아이콘들은 public/assets 폴더에 있습니다.
 // O 아이콘은 True.svg
 // X 아이콘은 False.svg
