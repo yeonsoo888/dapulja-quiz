@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom"
-
+import { useRef } from 'react';
+import { Link , useNavigate } from "react-router-dom"
+import QuizModal from "./QuizModal"
 function ShortAnswer() {
   return <input placeholder='정답을 입력해주세요.' />
 }
@@ -26,23 +27,45 @@ function OmrRow(quiz) {
 }
 
 function QuizSession({ title, quizzes }) {
+  const modal = useRef(null);
+  const navigate = useNavigate();
+  const path = process.env.PUBLIC_URL;
+
   return (
     <div>
       {/* 아래의 버튼을 누르면 모달이 보이는 페이지로 이동합니다.. */}
-      <Link to='/quiz/modal'>퀴즈 나가기</Link>
+      <button onClick={() => {
+        modal.current.open();
+      }}>퀴즈 나가기</button>
       <h1>{title}</h1>
       <div style={{ display: "flex" }}>
         <div style={{ borderRadius: "8px", border: "1px solid gray" }}>
-          문제 이미지가 보이는 영역
+          {/* 문제 이미지가 보이는 영역 */}
           {/* 해당 영역에서 문제 이미지가 보여져야 합니다.(src='/assets/QuizImage.png') */}
+          <img src={`${path}/assets/QuizImage.png`} alt="문제이미지" />
         </div>
         <div style={{ borderRadius: "8px", border: "1px solid gray" }}>
           <div>{quizzes.map((quiz) => OmrRow(quiz))}</div>
         </div>
       </div>
       {/* 모바일 화면에서만 보이는 답안입력 버튼, 해당 버튼을 누르면 정답 입력란이 화면에 보여져야 합니다. */}
-      {/* <button>답안입력</button> */}
+      <button className='mobile'>답안입력</button>
       <Link to='/result'>제출하기</Link>
+      {/* modal init */}
+      <QuizModal name="quizModal" ref={modal}>
+        <h6>퀴즈를 종료하시겠습니까?</h6>
+        <p>
+          지금 종료하시면 문제 푼 기록이 저장되지 않습니다. <br />
+          정말 퀘스트를 종료하시겠습니까?
+        </p>
+        <button onClick={() => {
+          modal.current.close();
+        }}>취소</button>
+        <button onClick={() => {
+          navigate("/");
+        }}>종료하기</button>
+      </QuizModal>
+      {/* modal fin */}
     </div>
   )
 }
