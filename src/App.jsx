@@ -7,6 +7,7 @@ import Home from "./pages/Home"
 import QuizSession from "./pages/QuizSession"
 import QuizModal from "./pages/QuizModal"
 import Result from "./pages/Result"
+import './scss/style.scss';
 
 function App() {
   // 메인화면 데이터s
