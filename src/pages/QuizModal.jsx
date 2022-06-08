@@ -9,6 +9,16 @@ const QuizModal = forwardRef(({ title, quizzes , name , children },ref) => {
       close: () => setIsPop(false)
     }
   })
+
+  useEffect(() => {
+		let isScroll = null;
+		isPop ? (isScroll = 'hidden') : (isScroll = 'auto');
+		document.body.style.overflow = isScroll;
+		return () => {
+			document.body.style.overflow = 'auto';
+		};
+	}, [isPop]);
+
   return (
     <>
       <AnimatePresence>

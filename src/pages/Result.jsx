@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Layout from "../components/layout"
 
 function Summary({ summary }) {
   return (
@@ -37,12 +38,14 @@ function OmrRow(quiz) {
 function Result({ resultSummary, resultSheet }) {
   const path = process.env.PUBLIC_URL;
   return (
-    <div>
-      <img src={`${path}/assets/Quiz-Complete.png`} alt='퀴즈완료' width={160} />
-      <Summary summary={resultSummary} />
-      {resultSheet.map((result) => OmrRow(result))}
-      <Link to='/'>완료</Link>
-    </div>
+    <Layout>
+      <div>
+        <img src={`${path}/assets/Quiz-Complete.png`} alt='퀴즈완료' width={160} />
+        <Summary summary={resultSummary} />
+        {resultSheet.map((result) => OmrRow(result))}
+        <Link to='/'>완료</Link>
+      </div>
+    </Layout>
   )
 }
 
