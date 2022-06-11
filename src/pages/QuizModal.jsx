@@ -22,7 +22,6 @@ const QuizModal = forwardRef(({ title, quizzes , name , children },ref) => {
   return (
     <>
       <AnimatePresence>
-        {/* 아래 코드부터 모달 부분입니다. */}
         {
           isPop && (
             <motion.section

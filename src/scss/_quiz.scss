@@ -1,0 +1,69 @@
+.quiz {background: #eaeaea;}
+.quizInner {padding: 5rem 0 0;}
+.quiz__header {
+    position: relative; display: flex; align-items: center; justify-content: space-between; margin: 0 0 4rem;
+    h1 {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 1rem;}
+    button {
+        display: flex; align-items: center; background: none; font-weight: 500; color: #666;
+        img {margin: 0 0.5rem 0 0;}
+    }
+}
+.quiz__cnts {align-items: flex-start; gap: 1rem;}
+.quiz__left {flex: 1; background: #fff; padding: 1rem 0; border-radius: 10px; border: 1px solid #ddd;}
+.quiz__right {
+    width: 25rem;
+    .quiz__tableWrap {border: 1px solid $pirmaryColor; border-radius: 8px; background: #fff; overflow: hidden;}
+    input[type="text"] {width: 100%; border: 1px solid #ddd; padding: 0.5rem; font-size: 1rem; color: #222; border-radius: 5px;}
+    input[type="text"]::placeholder {color: #999;}
+}
+
+
+.gaugeWrap {display: flex; align-items: center;}
+.bar {position: relative; width: 10rem; background: #d1d5db; height: 1rem; border-radius: 1rem; overflow: hidden; margin: 0 1rem 0 0;}
+.barInner {position: absolute; width: 100%; height: 100%; background: $pirmaryColor; border-radius: 5rem; transition: .3s ease;}
+.gaugeNum {
+    font-size: 1em; font-weight: 500;
+    span {color: $pirmaryColor;}
+}
+.btnSubmit {display: flex; width: 10rem; height: 3rem; background: $pirmaryColor; color: #fff; font-weight: 500; font-size: 1rem; align-items: center; justify-content: center; border-radius: 10px; margin: 3rem auto 0;}
+.quiz__table {
+    width: 100%; 
+    thead tr {border-bottom: 1px solid $pirmaryColor;}
+    th {background: #ecf7f8; color: $pirmaryColor; padding: 0.5rem;}
+    td {padding: 0.5rem 1rem;;}
+    th:nth-of-type(1) {background: #ecf7f8; border-right: 1px solid $pirmaryColor; color: $pirmaryColor;}
+    td:nth-of-type(1) {background: #ecf7f8; border-right: 1px solid $pirmaryColor; color: $pirmaryColor;}
+    .btnWrap {
+        display: flex; gap: 1.5rem; align-items: center; width: 100%;
+        label {display: inline-block; width: calc((100% - 6rem) / 5); height: 3rem;}
+        p {display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; background: #fff; border: 1px solid $pirmaryColor; border-radius: 5px; color: $pirmaryColor; font-size: 1.125rem; cursor: pointer; transition: .3s ease; }
+        input:checked + p {background: $pirmaryColor; color: #fff;}
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .quiz__header {
+        background: #fff; padding: 1rem; flex-wrap: wrap; border-radius: 5px;
+        h1 {top: 1rem; transform: translate(-50%,0);}
+    }
+    
+    .gaugeWrap {width: 100%; margin: 1rem 0 0;}
+    .bar {flex: 1;}
+}
+
+@media screen and (max-width: 768px) {
+    .quiz {
+        .quiz__right {
+            position: fixed; flex-wrap: wrap; display: flex; align-items: center; justify-content: center; left: 0; top: 0; width: 100%; height: 100vh; z-index: 11; background: rgba(0,0,0,0.6); opacity: 0; visibility: hidden; transition: .3s ease;
+            &.active {opacity: 1; visibility: visible;}
+            .quiz__tableWrap {background: #fff;}
+            button {width: 100%; margin: 1rem 0 0; background: $pirmaryColor; color: #fff; padding: 0.5rem 0; border-radius: 5px;}
+        }
+        .quiz__table {
+            .btnWrap {
+                label {height: 2rem;}
+            }
+        }
+        
+    }
+}

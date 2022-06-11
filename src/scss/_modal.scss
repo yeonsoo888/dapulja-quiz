@@ -1,4 +1,14 @@
 .modal {
-    position: fixed; left: 0; top: 0; width: 100%; height: 100vh; overflow: auto; background: rgba(0,0,0,0.8); z-index: 10; cursor: pointer;
-    .inner {background: #fff; padding: 1.5rem; cursor: auto; max-width: 600px; width: calc(100% - 20px); margin: 2rem auto;}
+    position: fixed; display: flex; align-items: center; justify-content: center; left: 0; top: 0; width: 100%; height: 100vh; overflow: auto; background: rgba(0,0,0,0.8); z-index: 10; cursor: pointer;
+    .inner {background: #fff; padding: 1.5rem; cursor: auto; max-width: 600px; width: calc(100% - 20px); border-radius: 10px;}
+    .modalTit {font-size: 1.5rem; font-weight: 500; margin: 0 0 2rem;}
+    .modalTxt {font-size: 1rem; font-weight: 500; color: #999; line-height: 2;}
+    .modalBtnWrap {
+        display: flex; width: 100%; height: 3rem; align-items: center; justify-content: center; gap: 1rem; margin: 8rem 0 0;
+        button {
+            flex: 1; height: 100%; font-size: 1.25rem;
+            & + button {background: $pirmaryColor; color: #fff;}
+        }
+
+    }
 }

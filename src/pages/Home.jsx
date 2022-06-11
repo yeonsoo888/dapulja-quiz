@@ -2,15 +2,13 @@ import { Link } from "react-router-dom";
 import Layout from "../components/layout";
 
 function WorkbookView(workbook) {
-  const linkStyle = {
-    backgroundColor: "lightgray",
-    display: "inline-block",
-    margin: "0 2rem",
-  }
   return (
     <li>
-      <Link to='/quiz' key={workbook.seq} style={linkStyle}>
-        <h2 style={{ fontSize: "20px" }}>{workbook.title}</h2>
+      <Link to='/quiz' key={workbook.seq}>
+        <div>
+          <h2>{workbook.title}</h2>
+          <p>{workbook.subject}</p>
+        </div>
       </Link>
     </li>
   )
@@ -18,9 +16,12 @@ function WorkbookView(workbook) {
 
 function Home({ workbookList }) {
   return (
-    <Layout name="main">
-      <ul className="main__testList">{workbookList.map((workbook) => WorkbookView(workbook))}</ul>
-    </Layout>
+    <>
+      <div className="mainVis"></div>
+      <Layout name="main">
+        <ul className="main__testList">{workbookList.map((workbook) => WorkbookView(workbook))}</ul>
+      </Layout>
+    </>
   )
   
 }

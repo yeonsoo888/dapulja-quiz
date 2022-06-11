@@ -1,3 +1,50 @@
-.main__testList {
-    display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 0;
+.mainVis {height: 25rem; background: #999; }
+.main {
+    padding: 2rem;
+    min-height:  calc(100vh - 25rem);
+    
+    .main__testList {
+        display: flex; flex-wrap: wrap; gap: 1rem; 
+        li {width: calc((100%  - 3rem)/ 4);}
+        a {
+            display: flex; flex-wrap: wrap; background: #fff; padding: 1rem; box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.2); text-align: left;
+            height: 7rem; align-items: flex-start; transition: .3s ease;
+            h2 {width: 100%; height: auto; font-size: 1rem; transition: .3s ease; font-size: 1.25rem;}
+            p {font-size: 0.875rem; color: #999; transition: .3s ease;}
+            &:hover {
+                background: $pirmaryColor;
+                h2,p {color: #fff;}
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .main {
+        padding: 2rem 1rem;
+        .main__testList {
+            li {width: calc((100%  - 2rem)/ 3);}
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .main {
+        .main__testList {
+            li {
+                width: calc((100%  - 1rem)/ 2); 
+                a {height: 100%;}
+                
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .main {
+        .main__testList {
+            li {
+                width: 100%;
+            }
+        }
+    }
 }

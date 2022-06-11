@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom"
 import Layout from "../components/layout"
+const path = process.env.PUBLIC_URL;
 
 function Summary({ summary }) {
   return (
-    <div>
-      <div>정답: {summary.correct}개</div>
-      <div>오답: {summary.incorrect}개</div>
+    <div className="summary">
+      <div>
+        <span>정답</span> {summary.correct}개
+      </div>
+      <div>
+        <span>오답</span> {summary.incorrect}개
+      </div>
     </div>
   )
 }
@@ -14,36 +19,71 @@ function ShortAnswer() {
   return <div>주관식 영역</div>
 }
 
-function MultipleAnswer() {
-  return (
-    <>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
-    </>
-  )
-}
-
 function OmrRow(quiz) {
+  
+
+  const arrAnswer = ["1","2","3","4","5"];
+  
+  const correctStyle = {
+    background: `url(${path}/assets/true.svg) no-repeat`
+  }
+  const inCorrectStyle = {
+    background: `url(${path}/assets/false.svg) no-repeat`
+  }
+
   return (
-    <div key={quiz.seq}>
-      <span>selected: {quiz.selected}</span>
-      <span>value: {quiz.value}</span>
-    </div>
+    <tr key={quiz.seq}>
+      <td className={`${quiz.selected == quiz.value ? 'correct' : 'incorrect'}`}><span style={quiz.selected == quiz.value ? correctStyle : inCorrectStyle}>{quiz.seq}</span></td>
+      <td>
+        <div className="btnWrap">
+          {
+            arrAnswer.map((item,i) => {
+              return(
+                <p 
+                  className={`
+                    ${quiz.selected == item ? 'selected' : ""}
+                    ${quiz.value == item ? 'value' : ""}
+                  `}
+                  key={i}
+                >{item}</p>
+              )
+            })
+          }
+        </div>
+      </td>
+    </tr>
   )
 }
 
 function Result({ resultSummary, resultSheet }) {
   const path = process.env.PUBLIC_URL;
   return (
-    <Layout>
-      <div>
+    <Layout name="result">
+      <div className="resultInner">
         <img src={`${path}/assets/Quiz-Complete.png`} alt='퀴즈완료' width={160} />
-        <Summary summary={resultSummary} />
-        {resultSheet.map((result) => OmrRow(result))}
-        <Link to='/'>완료</Link>
+        <div className="result__cnts">
+          <Summary summary={resultSummary} />
+          <div className="quiz__right">
+            <div className="quiz__tableWrap">
+              <table className='quiz__table'>
+                <thead>
+                  <tr>
+                    <th>문번</th>
+                    <th>답안</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {resultSheet.map((result) => OmrRow(result))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <Link to='/' className="btnSubmit">완료</Link>
+      </div>
+      <div className="pyro">
+        <div className="before"></div>
+        <div className="after"></div>
       </div>
     </Layout>
   )
