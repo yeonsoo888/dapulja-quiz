@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/dapulja-quiz/static/css/main.16a8834c.css",
-    "main.js": "/dapulja-quiz/static/js/main.c1fc141f.js",
+    "main.css": "/dapulja-quiz/static/css/main.19c1afac.css",
+    "main.js": "/dapulja-quiz/static/js/main.d67cde5e.js",
     "static/js/787.87bf8d17.chunk.js": "/dapulja-quiz/static/js/787.87bf8d17.chunk.js",
     "index.html": "/dapulja-quiz/index.html",
-    "main.16a8834c.css.map": "/dapulja-quiz/static/css/main.16a8834c.css.map",
-    "main.c1fc141f.js.map": "/dapulja-quiz/static/js/main.c1fc141f.js.map",
+    "main.19c1afac.css.map": "/dapulja-quiz/static/css/main.19c1afac.css.map",
+    "main.d67cde5e.js.map": "/dapulja-quiz/static/js/main.d67cde5e.js.map",
     "787.87bf8d17.chunk.js.map": "/dapulja-quiz/static/js/787.87bf8d17.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.16a8834c.css",
-    "static/js/main.c1fc141f.js"
+    "static/css/main.19c1afac.css",
+    "static/js/main.d67cde5e.js"
   ]
 }
