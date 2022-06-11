@@ -85,7 +85,7 @@ function QuizSession({ title, quizzes }) {
               modal.current.open();
             }}>
               <img src={`${path}/assets/Back.svg`} alt="" className='pc' />
-              <img src={`${path}/assets/close.svg`} alt="" className='mobile' style={{width: "1rem",}}  />
+              <img src={`${path}/assets/Close.svg`} alt="" className='mobile' style={{width: "1rem",}}  />
               <span className='pc'>퀴즈 나가기</span>
             </button>
             <h1>{title}</h1>
