@@ -18,6 +18,16 @@
     p.value {background: $pirmaryColor; color: #fff;}
 }
 
+@media screen and (max-width: 768px) {
+  .result {
+    .result__cnts {flex-wrap: wrap;}
+    .summary {flex: auto; width: 100%; max-width: 30rem; margin: 0 auto;}
+    .quiz__right {width: 100%; max-width: 30rem; margin: 0 auto;}
+    .btnSubmit {width: 100%;}
+  }
+
+}
+
 
 
 

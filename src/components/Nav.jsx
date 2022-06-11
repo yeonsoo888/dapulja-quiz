@@ -22,25 +22,27 @@ function Nav() {
         <h1 className="logo">
           <NavLink to='/' style={{background: `url(${path}/assets/Dapulja-Logo.svg) no-repeat`}}>다풀자퀴즈</NavLink>
         </h1>
-        <nav className={`header__nav ${isMenu ? "active" : ""}`}>
-          <div className="topInfo mobile">
-            <h1 className="logo">
-              <NavLink to='/' style={{background: `url(${path}/assets/Dapulja-Logo.svg) no-repeat`}}>다풀자퀴즈</NavLink>
-            </h1>
-            <div className='userInfo'>
-              <div className='userInfo__imgWrap'>
-                <img src={`${path}/assets/Daram.png`} alt="" />
+        <div className={`${isMenu ? "active" : ""} header__navWrap`}>
+          <nav className={`header__nav `}>
+            <div className="topInfo mobile">
+              <h1 className="logo">
+                <NavLink to='/' style={{background: `url(${path}/assets/Dapulja-Logo.svg) no-repeat`}}>다풀자퀴즈</NavLink>
+              </h1>
+              <div className='userInfo'>
+                <div className='userInfo__imgWrap'>
+                  <img src={`${path}/assets/Daram.png`} alt="" />
+                </div>
+                <p>다풀자람이</p>
               </div>
-              <p>다풀자람이</p>
             </div>
-          </div>
-          <NavLink to='/'>기출문제</NavLink>
-          <NavLink to='/quiz'>문제풀기</NavLink>
-          <div className="authWrap">
-            <NavLink to="/login">로그인</NavLink>
-          </div>
-        </nav>
-        <div className="hamburger_wrap mobile" onClick={handleMenuOpen}>
+            <NavLink to='/'>기출문제</NavLink>
+            <NavLink to='/quiz'>문제풀기</NavLink>
+            <div className="authWrap">
+              <NavLink to="/login">로그인</NavLink>
+            </div>
+          </nav>
+        </div>
+        <div className={`hamburger_wrap mobile ${isMenu ? "mOpen" : ""}`} onClick={handleMenuOpen}>
           <div className="hamburger__inner">
             <div id="nav-icon3" className="">
               <span></span>

@@ -129,7 +129,7 @@ function QuizSession({ title, quizzes }) {
             </div>
           </div>
           {/* 모바일 화면에서만 보이는 답안입력 버튼, 해당 버튼을 누르면 정답 입력란이 화면에 보여져야 합니다. */}
-          <div className='btnWrap'>
+          <div className='btnBtmWrap'>
             <button className='btnEnroll mobile768' onClick={()=>{setIsOmr(true)}}>답안입력</button>
             <Link to='/result' className='btnSubmit'>제출하기</Link>
           </div>
