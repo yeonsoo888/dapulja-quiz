@@ -25,10 +25,10 @@ function OmrRow(quiz) {
   const arrAnswer = ["1","2","3","4","5"];
   
   const correctStyle = {
-    background: `url(${path}/assets/true.svg) no-repeat`
+    background: `url(${path}/assets/True.svg) no-repeat`
   }
   const inCorrectStyle = {
-    background: `url(${path}/assets/false.svg) no-repeat`
+    background: `url(${path}/assets/False.svg) no-repeat`
   }
 
   return (
